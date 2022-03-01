@@ -43,12 +43,12 @@ void inputScore(STU stu[],int n,int m,FILE *fp2)
 	{
 		printf("请依次输入第%d学生学号，姓名，成绩：(格式：100 小明)\n",i+1);
 		scanf("%ld %s",&stu[i].studentID,&stu[i].studentName);
-		fprintf(fp2,"%ld        %s        ",stu[i].studentID,stu[i].studentName);
+		fprintf(fp2,"%ld        %s            ",stu[i].studentID,stu[i].studentName);
 		for(j=0;j<m;j++)
 		{
 			printf("第%d门课程的成绩：\n",j+1);
 			scanf("%d",&stu[i].score[j]);
-			fprintf(fp2,"%d        ",stu[i].score[j]);
+			fprintf(fp2,"%d            ",stu[i].score[j]);
 		}
 		fprintf(fp2,"\n");
 	}
@@ -92,7 +92,7 @@ void mmScore(STU stu[],float aver[],int n,int m,FILE *fp1)
 		printf("第%d门课程的最高分是：%d\n相应的学生信息：%ld %s\n",j+1,stu[ka].score[j],stu[ka].studentID,stu[ka].studentName);
 		printf("第%d门课程的最低分是：%d\n相应的学生信息：%ld %s\n",j+1,stu[ki].score[j],stu[ki].studentID,stu[ki].studentName);
 		printf("-------------------------------------------------------------------------------------------------------------\n\n");
-		fprintf(fp1,"%d        %0.2f        %d        %ld %s        %d        %ld %s\n",j+1,aver[j],stu[ka].score[j],stu[ka].studentID,stu[ka].studentName,stu[ki].score[j],stu[ki].studentID,stu[ki].studentName);
+		fprintf(fp1," %d              %0.2f            %d                    %ld %s                    %d                   %ld %s\n",j+1,aver[j],stu[ka].score[j],stu[ka].studentID,stu[ka].studentName,stu[ki].score[j],stu[ki].studentID,stu[ki].studentName);
 	}
 	fclose(fp1);
 	printf("成绩文件保存成功\n");
